@@ -59,6 +59,10 @@
           fn = arguments[0], cb = arguments[1], args = 3 <= arguments.length ? __slice.call(arguments, 2) : [];
           return page._onResourceRequested.apply(page, [fn.toString(), cb].concat(args));
         };
+        page._onResourceReceived = page.onResourceReceived;
+        page.onResourceReceived = function(fn, cb) {
+          return page._onResourceReceived.apply(page, [fn.toString(), cb]);
+        }
         return cb(page);
       });
     };
