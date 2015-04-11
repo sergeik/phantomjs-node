@@ -5530,7 +5530,7 @@ require.define("/shim.coffee", function (require, module, exports, __dirname, __
           x.apply(this, argumentsWithExtraArgs);
           return cb.apply(this, argumentsWithExtraArgs);
         };
-
+      },
       onResourceReceived: function(fn, cb) {
         if (cb == null) cb = (function() {});
         return page.onResourceReceived = function() {
