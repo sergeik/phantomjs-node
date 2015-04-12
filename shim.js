@@ -5545,6 +5545,12 @@ require.define("/shim.coffee", function (require, module, exports, __dirname, __
         if (cb == null) cb = function() {};
         return cb(page.injectJs(js));
       },
+      
+      clearMemoryCache: function(cb) {
+        if (cb == null) cb = function() {};
+        return cb(page.clearMemoryCache());
+      },
+
       evaluate: function() {
         var args, cb, fn;
         fn = arguments[0], cb = arguments[1], args = 3 <= arguments.length ? __slice.call(arguments, 2) : [];
