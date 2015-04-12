@@ -5634,6 +5634,10 @@ require.define("/shim.coffee", function (require, module, exports, __dirname, __
       if (cb == null) cb = function() {};
       return cb(phantom.clearCookies());
     },
+    clearMemoryCache: function(cb) {
+        if (cb == null) cb = function() {};
+        return cb(page.clearMemoryCache());
+    },    
     createPage: function(cb) {
       return cb(pageWrap(webpage.create()));
     },
