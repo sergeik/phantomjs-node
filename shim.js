@@ -5540,6 +5540,13 @@ require.define("/shim.coffee", function (require, module, exports, __dirname, __
           return cb.apply(this, arguments);
         };
       },
+      
+      onResourceError: function(fn, cb) {
+        if (cb == null) cb = function() {};
+        page.onResourceError = function(){
+            return fn.apply(this, arguments);
+        }
+      },      
 
       injectJs: function(js, cb) {
         if (cb == null) cb = function() {};
